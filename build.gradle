@@ -7,10 +7,6 @@ buildscript {
     }
 }
 
-plugins {
-    id 'net.saliman.cobertura' version '3.0.0'
-}
-
 repositories {
     mavenCentral()
 }
