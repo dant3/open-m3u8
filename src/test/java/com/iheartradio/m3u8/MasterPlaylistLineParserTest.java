@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
+
 public class MasterPlaylistLineParserTest extends LineParserStateTestCase {
     @Test
     public void testEXT_X_MEDIA() throws Exception {

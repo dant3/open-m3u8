@@ -2,6 +2,9 @@ package com.iheartradio.m3u8;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 public class ExtLineParserTest extends LineParserStateTestCase {
     @Test
     public void testEXTM3U() throws Exception {

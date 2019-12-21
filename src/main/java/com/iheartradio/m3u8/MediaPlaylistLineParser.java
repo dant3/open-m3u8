@@ -277,7 +277,7 @@ class MediaPlaylistLineParser implements LineParser {
 
             final Matcher matcher = ParseUtil.match(Constants.EXTINF_PATTERN, line, getTag());
 
-            state.getMedia().trackInfo = new TrackInfo(ParseUtil.parseFloat(matcher.group(1), getTag()), matcher.group(2));
+            state.getMedia().trackInfo = new TrackInfo(ParseUtil.parseFloat(matcher.group(1), getTag()), matcher.group(3), matcher.group(2));
         }
     };
 

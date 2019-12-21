@@ -195,13 +195,13 @@ public class PlaylistParserWriterTest {
                 "#EXT-X-TARGETDURATION:10\n" +
                 "#EXT-X-MEDIA-SEQUENCE:0\n"+
                 "#EXT-X-BYTERANGE:0@10\n" +
-                "#EXTINF:9.009\n" +
+                "#EXTINF:9.009,\n" +
                 "http://media.example.com/first.ts\n" +
                 "#EXT-X-BYTERANGE:20\n" +
-                "#EXTINF:9.009\n" +
+                "#EXTINF:9.009,\n" +
                 "http://media.example.com/first.ts\n" +
                 "#EXT-X-BYTERANGE:30\n" +
-                "#EXTINF:3.003\n" +
+                "#EXTINF:3.003,\n" +
                 "http://media.example.com/first.ts\n" +
                 "#EXT-X-ENDLIST\n", writePlaylist(playlist));
     }

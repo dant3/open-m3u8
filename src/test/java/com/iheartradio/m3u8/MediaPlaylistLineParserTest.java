@@ -8,6 +8,9 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 public class MediaPlaylistLineParserTest extends LineParserStateTestCase {
     @Test
     public void testEXT_X_TARGETDURATION() throws Exception {
@@ -32,8 +35,23 @@ public class MediaPlaylistLineParserTest extends LineParserStateTestCase {
         assertEquals(tag, handler.getTag());
 
         handler.parse(line, mParseState);
-        assertEquals(-1f, mParseState.getMedia().trackInfo.duration);
+        assertEquals(-1f, mParseState.getMedia().trackInfo.duration, 0.1);
         assertEquals("TOP 100", mParseState.getMedia().trackInfo.title);
+    }
+
+    @Test
+    public void textEXTINF_EXTRA_TAGS() throws Exception {
+        final IExtTagParser handler = MediaPlaylistLineParser.EXTINF;
+        final String tag = Constants.EXTINF_TAG;
+        final String line = "#" + tag + ":-1 tvg-id=\"360-podmoskovie\" tvg-name=\"360° Подмосковье\" tvg-language=\"Russian\" tvg-logo=\"https://gl.weburg.net/00/tv/channels/1/491/bigposter/7459394.png\" tvg-country=\"RU\" tvg-url=\"https://iptvx.one/epg/epg.xml.gz\" group-title=\"General\",360°";
+
+        assertEquals(tag, handler.getTag());
+
+        handler.parse(line, mParseState);
+        assertEquals(-1f, mParseState.getMedia().trackInfo.duration, 0.1);
+        assertEquals("360°", mParseState.getMedia().trackInfo.title);
+
+        assertEquals("360° Подмосковье", mParseState.getMedia().trackInfo.extraProperties.get("tvg-name"));
     }
 
     @Test

@@ -1,14 +1,15 @@
 package com.iheartradio.m3u8;
 
-import junit.framework.TestCase;
+import org.junit.Before;
 
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
-public class LineParserStateTestCase extends TestCase {
+public class LineParserStateTestCase {
     protected ParseState mParseState;
 
-    @Override
-    protected void setUp() throws Exception {
+    @Before
+    public void setUp() {
         mParseState = new ParseState(Encoding.UTF_8);
     }
 
@@ -19,10 +20,5 @@ public class LineParserStateTestCase extends TestCase {
         } catch (ParseException exception) {
             assertEquals(exceptionType, exception.type);
         }
-    }
-
-    @Test
-    public void test() {
-        // workaround for no tests found warning
     }
 }

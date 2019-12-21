@@ -100,7 +100,7 @@ final class Constants {
     public static final Pattern EXT_X_PLAYLIST_TYPE_PATTERN  = Pattern.compile("^#" + EXT_X_PLAYLIST_TYPE_TAG + EXT_TAG_END + "(EVENT|VOD)$");
     public static final Pattern EXT_X_PROGRAM_DATE_TIME_PATTERN  = Pattern.compile("^#" + EXT_X_PROGRAM_DATE_TIME_TAG + EXT_TAG_END + "(" + TIMESTAMP_REGEX + ")$");
     public static final Pattern EXT_X_MEDIA_IN_STREAM_ID_PATTERN = Pattern.compile("^CC[1-4]|SERVICE(?:[1-9]|[1-5]\\d|6[0-3])$");
-    public static final Pattern EXTINF_PATTERN = Pattern.compile("^#" + EXTINF_TAG + EXT_TAG_END + "(" + SIGNED_FLOAT_REGEX + ")(?:,(.+)?)?$");
+    public static final Pattern EXTINF_PATTERN = Pattern.compile("^#" + EXTINF_TAG + EXT_TAG_END + "(" + SIGNED_FLOAT_REGEX + ")?(?:\\s+([^,]+))?(?:,(.+)?)?$");
     public static final Pattern EXT_X_ENDLIST_PATTERN = Pattern.compile("^#" + EXT_X_ENDLIST_TAG + "$");
     public static final Pattern EXT_X_I_FRAMES_ONLY_PATTERN = Pattern.compile("^#" + EXT_X_I_FRAMES_ONLY_TAG);
     public static final Pattern EXT_X_DISCONTINUITY_PATTERN = Pattern.compile("^#" + EXT_X_DISCONTINUITY_TAG + "$");
